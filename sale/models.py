@@ -15,6 +15,7 @@ class Selling(models.Model):
 
 
 	def check_proc(self):
+		""" метод проверки процента """
 		_ = self.vat_rate / 100
 		if round(self.netto*_) != round(self.vat_sum):
 			raise ValueError("ошибка процента")
